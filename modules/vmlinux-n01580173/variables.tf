@@ -59,3 +59,7 @@ variable "linux_version" {
 variable "pub_key" {
   default = "~/.ssh/id_rsa.pub"
 }
+
+variable "priv_key" {
+  default = "~/.ssh/id_rsa"
+}
