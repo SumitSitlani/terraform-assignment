@@ -23,3 +23,18 @@ module "common-n01580173" {
   workspace_name = "workspace-0173"
   storage_account_name = "sa-0173"
 }
+
+module "linux-n01580173"{
+  source = "./modules/vmlinux-n01580173"
+  location = module.rgroup-n01580173.rg-name.location
+  rg-name = module.rgroup-n01580173.rg-name.name
+  linux_name = {
+    "n01580173-c-vm1" = "Standard_B1s"
+    "n01580173-c-vm2" = "Standard_B1s"
+    "n01580173-c-vm3" = "Standard_B1s"
+  }
+  admin_username = "sumitsitlani"
+  linux_avs = "LinuxAVS"
+  subnet_id = module.network-n01580173.subnetdetails.id
+  storage_account_uri = module.common-n01580173.storage_account.primary_blob_endpoint
+}

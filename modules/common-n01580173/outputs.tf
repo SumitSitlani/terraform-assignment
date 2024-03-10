@@ -6,6 +6,6 @@ output "vault_name" {
   value = azurerm_recovery_services_vault.vault.name
 }
 
-output "storage_account_name" {
-  value = azurerm_storage_account.storageaccount.name
+output "storage_account" {
+  value = azurerm_storage_account.storageaccount
 }
