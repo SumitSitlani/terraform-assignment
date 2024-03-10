@@ -23,13 +23,13 @@ variable "linux_name" {
 }
 
 locals {
-  tags={
-    Assignment = "CCGC 5502 Automation Assignment"
-    Name = "Sumit.Sitlani"
+  tags = {
+    Assignment     = "CCGC 5502 Automation Assignment"
+    Name           = "Sumit.Sitlani"
     ExpirationDate = "2024-12-31"
-    Environment = "Learning"
+    Environment    = "Learning"
   }
-} 
+}
 
 variable "os_disk_attr" {
   type = map(string)

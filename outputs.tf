@@ -37,3 +37,19 @@ output "LinuxPrivateAddresses" {
 output "LinuxPublicAddresses" {
   value = module.linux-n01580173.LinuxPublicAddresses
 }
+
+output "WindowsHostNames" {
+  value = module.vmwindows-n01580173.WindowsHostNames
+}
+
+output "WindowsDomainNames" {
+  value = module.vmwindows-n01580173.WindowsDomainNames
+}
+
+output "WindowsPrivateIPAddress" {
+  value = module.vmwindows-n01580173.WindowsPrivateIP
+}
+
+output "WindowsPublicIPAddress" {
+  value = module.vmwindows-n01580173.WindowsPublicIP
+}

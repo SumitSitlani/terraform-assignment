@@ -3,7 +3,7 @@ resource "azurerm_virtual_network" "vnet" {
   location            = var.location
   resource_group_name = var.rg-name
   address_space       = var.vnet-address-space
-  tags = local.tags
+  tags                = local.tags
 }
 
 resource "azurerm_subnet" "subnet" {
@@ -17,9 +17,9 @@ resource "azurerm_network_security_group" "nsg" {
   name                = var.nsg-name
   location            = var.location
   resource_group_name = var.rg-name
-  tags = local.tags
+  tags                = local.tags
 
-  security_rule{
+  security_rule {
 
     name                       = "rule-1"
     priority                   = 100
@@ -31,7 +31,7 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-  security_rule{
+  security_rule {
 
     name                       = "rule-2"
     priority                   = 110
@@ -43,7 +43,7 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-  security_rule{
+  security_rule {
 
     name                       = "rule-3"
     priority                   = 120
@@ -55,7 +55,7 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-  security_rule{
+  security_rule {
 
     name                       = "rule-4"
     priority                   = 130
