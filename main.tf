@@ -48,3 +48,9 @@ module "vmwindows-n01580173" {
   storage_account_uri = module.common-n01580173.storage_account.primary_blob_endpoint
   machine_count       = 1
 }
+module "datadisk-n01580173" {
+  source = "./modules/datadisk-n01580173"
+  location            = module.rgroup-n01580173.rg-name.location
+  rg-name             = module.rgroup-n01580173.rg-name.name
+  machine_id = flatten([module.vmwindows-n01580173.WindowsVMids, module.linux-n01580173.LinuxVMids])
+}

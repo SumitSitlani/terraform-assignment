@@ -13,3 +13,7 @@ output "LinuxPrivateAddresses" {
 output "LinuxPublicAddresses" {
   value = values(azurerm_linux_virtual_machine.linux_vm)[*].public_ip_address
 }
+
+output "LinuxVMids" {
+  value = tolist(values(azurerm_linux_virtual_machine.linux_vm)[*].id)
+}

@@ -13,3 +13,7 @@ output "WindowsPrivateIP" {
 output "WindowsPublicIP" {
   value = [azurerm_windows_virtual_machine.vmwindows[*].public_ip_address]
 }
+
+output "WindowsVMids" {
+  value = tolist([azurerm_windows_virtual_machine.vmwindows[*].id])
+}
