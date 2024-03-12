@@ -17,3 +17,11 @@ output "LinuxPublicAddresses" {
 output "LinuxVMids" {
   value = tolist(values(azurerm_linux_virtual_machine.linux_vm)[*].id)
 }
+
+output "nic_id" {
+  value = tolist(values(azurerm_network_interface.linux_nic)[*].id)
+}
+
+output "ip_config" {
+  value = [for nic in azurerm_network_interface.linux_nic : nic.ip_configuration[0].name]
+}

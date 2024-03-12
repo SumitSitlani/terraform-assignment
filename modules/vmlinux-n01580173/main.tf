@@ -40,6 +40,7 @@ resource "azurerm_linux_virtual_machine" "linux_vm" {
   admin_username        = var.admin_username
   network_interface_ids = [azurerm_network_interface.linux_nic[each.key].id]
   tags                  = local.tags
+  availability_set_id = azurerm_availability_set.linux_avs.id
   os_disk {
     name                 = "${each.key}-osdisk"
     caching              = var.os_disk_attr["os_disk_caching"]

@@ -53,3 +53,7 @@ output "WindowsPrivateIPAddress" {
 output "WindowsPublicIPAddress" {
   value = module.vmwindows-n01580173.WindowsPublicIP
 }
+
+output "lbname" {
+  value = module.loadbalancer-n01580173.lb_name
+}

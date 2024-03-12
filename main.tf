@@ -54,3 +54,11 @@ module "datadisk-n01580173" {
   rg-name             = module.rgroup-n01580173.rg-name.name
   machine_id = flatten([module.vmwindows-n01580173.WindowsVMids, module.linux-n01580173.LinuxVMids])
 }
+
+module "loadbalancer-n01580173" {
+  source = "./modules/loadbalancer-n01580173"
+  location = module.rgroup-n01580173.rg-name.location
+  rg-name = module.rgroup-n01580173.rg-name.name
+  nic_id = module.linux-n01580173.nic_id
+  ip_config = module.linux-n01580173.ip_config
+}
