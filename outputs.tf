@@ -57,3 +57,7 @@ output "WindowsPublicIPAddress" {
 output "lbname" {
   value = module.loadbalancer-n01580173.lb_name
 }
+
+output "databasename" {
+  value = module.database-n01580173.dbname
+}

@@ -62,3 +62,12 @@ module "loadbalancer-n01580173" {
   nic_id = module.linux-n01580173.nic_id
   ip_config = module.linux-n01580173.ip_config
 }
+
+module "database-n01580173" {
+  source = "./modules/database-n01580173"
+  location = module.rgroup-n01580173.rg-name.location
+  rg-name = module.rgroup-n01580173.rg-name.name
+  db_name = "assignmentdbn0173"
+  administrator_login = "plsqladmin"
+  administrator_login_password = "LetMeInItsAdmin@"
+}
