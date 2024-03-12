@@ -33,6 +33,7 @@ resource "azurerm_public_ip" "windows_pip" {
 }
 
 resource "azurerm_windows_virtual_machine" "vmwindows" {
+  availability_set_id = azurerm_availability_set.windows_avs.id
   count                 = var.machine_count
   name                  = "${var.vm_name}-${format("%1d", count.index + 1)}"
   resource_group_name   = var.rg-name
