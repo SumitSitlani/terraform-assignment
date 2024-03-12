@@ -14,14 +14,7 @@ resource "azurerm_recovery_services_vault" "vault" {
 resource "azurerm_storage_account" "storageaccount" {
   location                 = var.location
   resource_group_name      = var.rg-name
-  name                     = "${var.storage_account_name}${random_string.randomstring.id}"
+  name                     = var.storage_account_name
   account_tier             = "Standard"
   account_replication_type = "LRS"
-}
-
-resource "random_string" "randomstring" {
-  length  = 6
-  special = false
-  lower   = true
-  upper   = false
 }

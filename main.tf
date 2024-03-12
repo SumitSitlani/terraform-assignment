@@ -21,7 +21,7 @@ module "common-n01580173" {
   rg-name              = module.rgroup-n01580173.rg-name.name
   vault_name           = "vault-0173"
   workspace_name       = "workspace-0173"
-  storage_account_name = "sa0173"
+  storage_account_name = "san01580173"
 }
 
 module "linux-n01580173" {
