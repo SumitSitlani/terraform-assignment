@@ -13,6 +13,11 @@ resource "azurerm_subnet" "subnet" {
   address_prefixes     = var.subnet-add-space
 }
 
+resource "azurerm_subnet_network_security_group_association" "nsg_association" {
+  subnet_id = azurerm_subnet.subnet.id
+  network_security_group_id = azurerm_network_security_group.nsg.id
+}
+
 resource "azurerm_network_security_group" "nsg" {
   name                = var.nsg-name
   location            = var.location
